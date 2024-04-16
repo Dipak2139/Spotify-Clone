@@ -16,6 +16,7 @@ body{
 
 .right{
     width: 75vw;
+    position: relative;
 }
 
 
@@ -49,6 +50,86 @@ body{
 .heading img{
     width: 25px;
 }
+
+.songlist{
+    height: 300px;
+    overflow: auto;
+    margin-bottom: 60px;
+}
+
+.songlist ul{
+    padding: 0 6px;
+}
+
+/* .songlist ul li{
+    list-style-type: decimal;
+    display: flex;
+    gap: 32px;
+    cursor: pointer;
+    padding: 12px 0;
+    border:  1px solid white;
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.songList .info {
+    font-size: 13px;
+    width: 344px;
+}
+
+.playnow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playnow span{
+    font-size: 12px;
+    width: 64px;
+} */
+
+.songlist ul li {
+    list-style-type: decimal;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    /* padding: 12px 0; */
+    border: 1px solid rgba(146, 143, 143, 0.491);
+    margin: 12px 0;
+    padding: 5px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.songlist .info {
+    font-size: 13px;
+    width: 356px;
+}
+
+.info div {
+    word-break: break-all;
+}
+
+.playnow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playnow img{
+    border: 2px solid rgb(39 39 39);
+    border-radius: 20px;
+    width: 22px;
+}
+
+.playnow span {
+    font-size: 12px;
+    width: 78px;
+    padding: 12px;
+}
+
 
 .library{
     min-height: 80vh;
@@ -192,7 +273,8 @@ body{
     cursor: pointer;
     font-size: 17px;
 }
-/* .play{
+
+/* .play{  
     background-color: green;
 }
 
@@ -200,3 +282,18 @@ body{
     font-size: 100px;
     color: black;
 } */
+
+.playbar{
+    position: fixed;      
+    bottom:  0;  
+    background-color: #4cb773;
+    width: 70vw;
+    padding: 12px;
+}
+
+.songbtns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
