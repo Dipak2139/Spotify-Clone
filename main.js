@@ -1,5 +1,6 @@
 console.log("Cholo shuru kora hok")
 let currentSong = new Audio();
+let songs;
 
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -54,7 +55,7 @@ const playMusic = (track, pause=false)=>{
 
 // function to get all song list and play it when user interact with it
 async function main(){    
-    let songs = await getsongs()
+    songs = await getsongs()
     playMusic(songs[0],true)
     // console.log(songs)    
 
@@ -120,6 +121,32 @@ async function main(){
      document.querySelector(".close").addEventListener("click", ()=>{
         document.querySelector(".left").style.left= "-120%";
      })
+
+     // Add an event listener to previous
+       prev.addEventListener("click", () => {
+        currentSong.pause()
+        console.log("Previous clicked")
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        if ((index - 1) >= 0) {
+            playMusic(songs[index - 1])
+        }
+    })
+
+    // Add an event listener to next
+       next.addEventListener("click", () => {
+        currentSong.pause()
+        console.log("Next clicked")
+
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        if ((index + 1) < songs.length) {
+            playMusic(songs[index + 1])
+        }
+    })
+
+    // add an event to volume
+    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e)=>{
+        currentSong.volume = parseInt(e.target.value)/100
+    })
 }
 // getsongs()s    
     
