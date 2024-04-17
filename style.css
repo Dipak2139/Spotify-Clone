@@ -34,7 +34,9 @@ body{
     padding-top: 14px;
     font-weight: bold;
 }
-
+.home{
+    height: 26vh;
+}
 /* .home{
     padding: 10px;
 } */
@@ -337,5 +339,53 @@ body{
 .songinfo, .songtime{
     color: black;
     padding: 0 4px;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.close{
+    display: none;
+}
+
+@media (max-width: 1100px){
+    .left{
+        /* background-color: red; */
+        position: absolute;
+        left: -100%;
+        z-index: 1;
+        width: 45vw;
+        transition: all .3s;
+        background-color: black;
+    }
+
+    .left .close{
+        position: absolute;
+        right: 30px;
+        top: 22px;
+        width: 25px;
+        display: block;
+        cursor: pointer;
+    }
+
+    .right{
+        width: 100vw;
+    }
+
+    .playbar{
+        width: 90%;
+    }
+
+    .hamburger{
+        display: block;
+    }
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    justify-content: space-between;
 }
 
