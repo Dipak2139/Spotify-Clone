@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;;
 }
+
+/* .home, .library{
+    width: 98%;
+} */
 body{
     background-color: black;
     color: white;
@@ -11,12 +15,13 @@ body{
 
 .left{
     width: 25vw;
-    padding: 10px;
+    padding: 8px;
 }
 
 .right{
     width: 75vw;
     position: relative;
+    /* height: ; */
 }
 
 
@@ -284,10 +289,13 @@ body{
 } */
 
 .playbar{
-    position: fixed;      
-    bottom:  0;  
-    background-color: #4cb773;
+    position: fixed;   
+    filter: invert(1);   
+    bottom:  20px;  
+    background: #dad5d5;
+    border-radius: 10px;
     width: 70vw;
+    height: 49px;
     padding: 12px;
 }
 
@@ -296,4 +304,38 @@ body{
     justify-content: center;
     align-items: center;
     gap: 12px;
+    cursor: pointer;
 }
+
+.seekbar{
+    height: 3px;
+    width: 97%;
+    background:  black;
+    position: absolute;
+    bottom: 3px;
+    border-radius: 7px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.circle{
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background-color: black;
+    position: relative;
+    bottom: 6px;
+    left: 0%;
+    transition: left 0.5s;
+}
+
+.abovebar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.songinfo, .songtime{
+    color: black;
+    padding: 0 4px;
+}
+
