@@ -20,7 +20,7 @@ function secondsToMinutesSeconds(seconds) {
 async function getsongs(folder) {
   currFolder = folder;
 
-  let a = await fetch(`http://127.0.0.1:5500/${folder}/`);
+  let a = await fetch(`http://127.0.0.1:5502/${folder}/`);
   let response = await a.text();
   // console.log(response);
   let div = document.createElement("div");
@@ -81,7 +81,7 @@ const playMusic = (track, pause = false) => {
 };
 
 async function displayAlbums() {
-  let a = await fetch(`http://127.0.0.1:5500/songs/`);
+  let a = await fetch(`/songs/`);
 
   let response = await a.text();
   let div = document.createElement("div");
@@ -95,7 +95,7 @@ async function displayAlbums() {
     if (e.href.includes("/songs/")) {
       let folder = e.href.split("/").slice(-2)[1];
       //get the metadata of the folder
-      let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`);
+      let a = await fetch(`http://127.0.0.1:5502/songs/${folder}/info.json`);
 
       //  <svg width="16" height="16" viewBox="0 0 24 24" fill="#000" xmlns="https://www.w3.org/2000/svg">
     //   <path d="M5 20V4L19 12L5 20Z" stroke="#141B34" stroke-width="1.5" stroke-linejoin="round" />
@@ -131,7 +131,7 @@ async function displayAlbums() {
 
 // function to get all song list and play it when user interact with it
 async function main(folder) {
-  await getsongs("songs/ncs");
+  await getsongs("/songs/ncs");
   playMusic(songs[0], true);
 
   // Display all the albums dynamically
